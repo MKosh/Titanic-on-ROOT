@@ -33,7 +33,7 @@ do
             cat $trainFile | awk -F',' '{print $11}' | sed 's/^$/EMPTY/g' | paste traintemp2.csv - -d',' > traintemp1.csv # Fill empty Cabin data with EMPTY
     elif [ $i -eq 12 ]
     then
-        cat $trainFile | awk -F',' '{print $12}' | sed 's/^[^A-Z]/EMPTY/g' | paste traintemp1.csv - -d',' > $outFile # Fill empty embark data with EMPTY
+        cat $trainFile | awk -F',' '{print $12}' | sed 's/^$/EMPTY/g' | paste traintemp1.csv - -d',' > $outFile # Fill empty embark data with EMPTY (sometimes this line breaks)
     else
             echo "No change to col $i"
     fi
