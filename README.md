@@ -18,4 +18,19 @@ This cleans the training data in "train.csv" and outputs a file "training.csv". 
 
   `.x readData.C`
   
-That creates the "train.root" file and the TTree "Training" inside of it.
+That creates the "train.root" file and the TTree "Training" inside of it. Analysis can be started here, or you can add in the mean age to all of the missing values.
+
+* In a ROOT terminal
+
+  `.x getValues.C`
+  
+* Back in bash run
+
+  `./writeValues.sh`
+  
+This macro and script can be updated to fill in any missing data you want.
+
+* Back in ROOT, run one last
+
+  `.x readData.C`
+  
