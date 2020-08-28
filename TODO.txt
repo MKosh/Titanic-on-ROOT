@@ -1,0 +1,3 @@
+Separate out Cabin into Cabin letter and Cabin Number?
+Extract titles? (Mr. Miss. etc.)
+

@@ -17,6 +17,7 @@ do
 done
 
 sed -i 's/,\ /--\ /g' $trainFile # Remove ',' from the name column
+#sed -i '1d' $trainFile # Remove the column headers
 cat $trainFile | awk -F',' '{print $1","$2","$3","$4}' > traintemp1.csv
 
 for (( i=1; i<=$cols; i++ )) # Loop over the columns
@@ -29,11 +30,12 @@ do
         cat $trainFile | awk -F',' '{print $6}' | sed 's/^$/-1/g' | paste traintemp2.csv - -d',' > traintemp1.csv # Replace missing Age values with -1
         cat $trainFile | awk -F',' '{print $7","$8","$9","$10}' | paste traintemp1.csv - -d',' > traintemp2.csv
     elif [ $i -eq 11 ]
-    then
-            cat $trainFile | awk -F',' '{print $11}' | sed 's/^$/EMPTY/g' | paste traintemp2.csv - -d',' > traintemp1.csv # Fill empty Cabin data with EMPTY
+    then # Make two cabin cols one for the letter, one for the number
+        cat $trainFile | awk -F',' '{print $11}' | sed 's/[0-9]//g' | sed 's/\ [A-Z]//g' | sed 's/^$/n/g' | sed 's/Cabin/Section/g' | paste traintemp2.csv - -d',' > traintemp1.csv # Fill empty Cabin data with EMPTY
+        cat $trainFile | awk -F',' '{print $11}' | sed 's/[A-Z]//g' | sed 's/^\ //g' | sed 's/\ [0-9]*//g' | sed 's/^$/-1/g' | sed 's/abin/Room/g' | paste traintemp1.csv - -d',' > traintemp2.csv
     elif [ $i -eq 12 ]
-    then
-        cat $trainFile | awk -F',' '{print $12}' | sed 's/^$/EMPTY/g' | paste traintemp1.csv - -d',' > $outFile # Fill empty embark data with EMPTY (sometimes this line breaks)
+    then # issue with this below line comes from the data file itself, if set to use windows end line commands it will give issues. Easiest solution is to open the train.csv file in VS Code and change file type to LF instead of CRLF
+        cat $trainFile | awk -F',' '{print $12}' | sed 's/^$/E/g' | paste traintemp2.csv - -d',' > $outFile # Fill empty embark data with EMPTY (sometimes this line breaks add [[:space:]] between ^ and $ or remove it if its not working)
     else
             echo "No change to col $i"
     fi
