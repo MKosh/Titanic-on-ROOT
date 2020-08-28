@@ -1,7 +1,11 @@
 # Titanic-on-ROOT
 ## Analyzing the Titanic dataset with ROOT
 
-This is a work in progress side project to learn the TMVA framework in ROOT using a dataset that has a lot of resources online.
+This is a work in progress side project to learn the TMVA framework in ROOT using a dataset that has a lot of resources online. Tested on Ubuntu 20.04 running under Windows 10 WSL2.
+
+## Known issues
+
+There are issues when going between linux file types and windows. The first two lines are where the most errors come up. It's suggested that you first convert the train.csv file type to the correct format if you download it directly from somewhere like Kaggle. Open the file in VS Code and set the End of Line sequence at the bottom right to LF instead of CRLF and save it.
 
 ### How to do the analysis
 * First run
