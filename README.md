@@ -1,7 +1,7 @@
 # Titanic-on-ROOT
 ## Analyzing the Titanic dataset with ROOT
 
-This is a work in progress side project to learn the TMVA framework in ROOT using a dataset that has a lot of resources online. Tested on Ubuntu 20.04 running under Windows 10 WSL2.
+This is a work in progress side project to learn the TMVA framework in ROOT using a dataset that has a lot of resources online. Tested on Ubuntu 20.04 running under Windows 10 WSL2 using ROOT 6.22.00.
 
 ## Known issues
 
@@ -33,4 +33,5 @@ This macro and script can be updated to fill in any missing data you want.
 * Back in ROOT, run one last
 
   `.x readData.C`
-  
+ 
+ #### Handling testing data follows the same process except use the macros/scripts that say Test in them.
