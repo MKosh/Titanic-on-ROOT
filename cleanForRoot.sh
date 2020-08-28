@@ -1,8 +1,8 @@
 #!/bin/bash
 # Script for cleaning up the titanic dataset for ROOT
 
-trainFile="./data/train.csv"
-outFile="./data/training.csv"
+trainFile="data/train.csv"
+outFile="data/training.csv"
 
 cols_missing_data=()
 cols=$( cat $trainFile | awk -F',' '{print NF; exit}' )

@@ -1,3 +1,5 @@
-Separate out Cabin into Cabin letter and Cabin Number?
-Extract titles? (Mr. Miss. etc.)
+Separate out Cabin into Cabin letter and Cabin Number? Done
+Extract titles? (Mr. Miss. etc.) Probably not going to bother
+Chain Training and Testing trees together?
+Figure out proper loading of data.
 

@@ -8,7 +8,7 @@
     TFile *f = new TFile("train.root");
 
     Double_t aveAge;
-    Training->Draw("Age", "Age>0");
+    Testing->Draw("Age", "Age>0");
     aveAge = htemp->GetMean();
     c1->Close();
 
