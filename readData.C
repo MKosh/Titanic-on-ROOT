@@ -2,7 +2,7 @@
     // Read the data that the cleanForRoot.sh file generated
 
     // Make a new file called train.root, overwrite any old ones
-    TFile *f = new TFile("train.root");
+    TFile *f = new TFile("train.root", "RECREATE");
 
     // Make a new tree in the file called Training
     TTree *tree = new TTree("Training", "Training Data");
