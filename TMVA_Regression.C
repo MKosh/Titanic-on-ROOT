@@ -9,8 +9,8 @@ TMVA::Factory factory("TMVARegression", outputFile, "!V:!Silent:Color:!DrawProgr
 
 TMVA::DataLoader loader("dataset");
 
-loader.AddVariable("Age");
 loader.AddVariable("Sex");
+loader.AddVariable("Age");
 loader.AddVariable("SibSp");
 loader.AddVariable("Parch");
 loader.AddVariable("Fare");
