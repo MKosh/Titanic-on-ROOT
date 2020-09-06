@@ -34,3 +34,13 @@ This macro and script can be updated to fill in any missing data you want.
 
   `.x readData.C`
   
+#### Now to do the actual analysis
+
+ * Run the Regression training, followed by the Regression Application
+ 
+    `root -l TMVA_Regression.C`
+  
+    `root -l RegressionApp.C`
+  
+ NOTE: This is currently giving 1.057E9 for all survived values, but hey, at least its an output.
+  
